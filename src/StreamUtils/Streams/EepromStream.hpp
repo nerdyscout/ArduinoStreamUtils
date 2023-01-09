@@ -8,7 +8,12 @@
 
 #if STREAMUTILS_ENABLE_EEPROM
 
+#ifdef ARDUINO_ARCH_SAMD
+#include <FlashStorage_SAMD.h> //https://github.com/khoih-prog/FlashStorage_SAMD
+#else
 #include <EEPROM.h>
+#endif
+
 #include <Stream.h>
 
 namespace StreamUtils {
